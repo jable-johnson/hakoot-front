@@ -32,12 +32,26 @@
     "cz": "git cz",
     "commit": "git add -A && (git diff-index --quiet HEAD || git commit -m 'deploy' --no-verify) && git push origin HEAD",
     "version": "standard-version",
-    "ncu": "ncu -u --timeout 100000  && yarn install  && yarn format"
+    "ncu": "ncu -u --timeout 100000  && yarn install  && yarn format",
+    "stats": "vue-cli-service build --report"
+  },
+  "pre-commit": [
+    "precommit"
+  ],
+  "lint-staged": {
+    "*.vue": [
+      "npm run lint"
+    ],
+    "*.ts": [
+      "npm run lint"
+    ]
   },
   "dependencies": {
     "aos": "^3.0.0-beta.6",
     "core-js": "^3.17.2",
     "flex.box": "^3.4.4",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "logvis": "^1.0.6",
     "pretty-format": "27.1.0",
     "register-service-worker": "^1.7.2",
@@ -79,6 +93,12 @@
     "source-map-explorer": "^2.5.2",
     "standard-version": "^9.3.1",
     "typescript": "~4.4.2",
-    "vue-jest": "^5.0.0-alpha.10"
+    "vue-jest": "^5.0.0-alpha.10",
+    "webpack-bundle-analyzer": "^4.4.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo 'Pre-commit checks' && lint-staged"
+    }
   }
 }

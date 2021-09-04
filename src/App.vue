@@ -44,11 +44,11 @@ export default class extends Vue {
   }
 
   beforeCreate() {
-    console.log(this.layout)
+    console.log(this.layout);
   }
 
   created() {
-    console.log('layout', this.layout)
+    console.log('layout', this.layout);
   }
 
   destroyed(): void {

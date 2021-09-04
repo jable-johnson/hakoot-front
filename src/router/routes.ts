@@ -4,14 +4,33 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    component: () => import(/* webpackChunkName: "home" */  '@/views/Home.vue'),
+    component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
+    meta: {
+      layout: 'default',
+    },
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/dashboard',
+    name: 'Dashboard',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
     meta: {
-      layout: 'dashboard'
-    }
+      layout: 'dashboard',
+    },
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    meta: {
+      layout: 'public',
+    },
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    meta: {
+      layout: 'public',
+    },
   },
 ];
