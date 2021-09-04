@@ -31,7 +31,7 @@ export default class extends Vue {
   // --- computed
 
   get layout(): Component {
-    return layouts[(this.$route as any)?.meta?.layout || 'default'];
+    return layouts[(this.$route as any)?.meta?.layout];
   }
 
   // --- hooks
@@ -41,6 +41,14 @@ export default class extends Vue {
       duration: 500,
       disable: true,
     });
+  }
+
+  beforeCreate() {
+    console.log(this.layout)
+  }
+
+  created() {
+    console.log('layout', this.layout)
   }
 
   destroyed(): void {
