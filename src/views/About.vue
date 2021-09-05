@@ -11,12 +11,8 @@ import { getModule } from 'vuex-module-decorators';
 import ModuleA from '@/store/moduleA';
 import ModuleB from '@/store/moduleB';
 
-import { Button } from '@/components/Button';
-
 @Options({
-  components: {
-    Button,
-  },
+  components: {},
 })
 export default class About extends Vue {
   // ---
@@ -32,8 +28,6 @@ export default class About extends Vue {
 
   mounted(): void {
     ModuleA.increment(1);
-
-    // console.log(this.);
   }
 }
 </script>

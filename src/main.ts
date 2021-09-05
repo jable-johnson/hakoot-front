@@ -6,6 +6,7 @@ import router from './router';
 import store from './store';
 
 import './styles/index.scss';
+import './styles/tailwind.css';
 
 import { Loader } from '@/directives/Loader';
 import { Logger } from '@/plugins/Logger';

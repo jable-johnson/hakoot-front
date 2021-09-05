@@ -49,7 +49,6 @@
   "dependencies": {
     "aos": "^3.0.0-beta.6",
     "core-js": "^3.17.2",
-    "flex.box": "^3.4.4",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "logvis": "^1.0.6",
@@ -80,6 +79,7 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
     "@vue/test-utils": "^2.0.0-beta.7",
+    "autoprefixer": "^10.3.4",
     "babel-plugin-transform-decorators": "^7.0.0-beta.3",
     "commitizen": "^4.2.4",
     "eslint": "^7.32.0",
@@ -88,10 +88,12 @@
     "git-cz": "^4.7.6",
     "local-web-server": "^5.1.1",
     "node-sass": "^6.0.1",
+    "postcss": "^8.3.6",
     "prettier": "^2.3.2",
     "sass-loader": "^12.1.0",
     "source-map-explorer": "^2.5.2",
     "standard-version": "^9.3.1",
+    "tailwindcss": "^2.2.9",
     "typescript": "~4.4.2",
     "vue-jest": "^5.0.0-alpha.10",
     "webpack-bundle-analyzer": "^4.4.2"

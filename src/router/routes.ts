@@ -1,4 +1,5 @@
 import { RouteRecordRaw } from 'vue-router';
+import NotFound from '@/components/common/NotFound.vue'
 
 export const routes: Array<RouteRecordRaw> = [
   {
@@ -18,6 +19,14 @@ export const routes: Array<RouteRecordRaw> = [
     },
   },
   {
+    path: '/play',
+    name: 'Play',
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    meta: {
+      layout: 'play',
+    },
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
@@ -32,5 +41,18 @@ export const routes: Array<RouteRecordRaw> = [
     meta: {
       layout: 'public',
     },
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'notFound',
+    component: NotFound,
+    meta: {
+      header: {
+        logo: false,
+        homeButtton: true,
+      },
+      restricted: false,
+    },
+    props: true,
   },
 ];
