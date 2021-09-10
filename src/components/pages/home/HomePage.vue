@@ -78,8 +78,7 @@
                         border-0
                         text-base text-gray-900
                         placeholder-gray-500
-                        focus:outline-none
-                        focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900
+                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900
                       "
                     />
                   </div>
@@ -98,10 +97,8 @@
                         to-cyan-600
                         text-white
                         font-medium
-                        hover:from-teal-600
-                        hover:to-cyan-700
-                        focus:outline-none
-                        focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900
+                        hover:from-teal-600 hover:to-cyan-700
+                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900
                       "
                     >
                       Start free trial
@@ -600,7 +597,7 @@
 </template>
 
 <script lang="ts">
-import { Vue } from 'vue-class-component'
+import { Vue } from 'vue-class-component';
 
 export default class HomePage extends Vue {}
 </script>

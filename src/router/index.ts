@@ -1,21 +1,17 @@
-import { ComponentPublicInstance } from 'vue';
 import {
   createRouter,
   createWebHistory,
-  NavigationFailure,
-  NavigationGuardNext,
   RouteLocationNormalized,
   RouteLocationNormalizedLoaded,
-  RouteLocationRaw,
   Router,
   RouteRecordNormalized,
 } from 'vue-router';
 import { sync } from 'vuex-router-sync';
 
 import store from '@/store';
-import log from '@/log';
 
 import { routes } from './routes';
+import { checkAuth, setTitle } from './guards';
 
 interface ScrollPositionElement extends ScrollToOptions {
   el: string | Element;
@@ -26,19 +22,6 @@ type ScrollPositionCoordinates = {
   left?: number;
   top?: number;
 };
-
-type NavigationGuardNextCallback = (vm: ComponentPublicInstance) => any;
-type NavigationGuardReturn = void | Error | RouteLocationRaw | boolean | NavigationGuardNextCallback;
-
-// async function pipeline(
-//     to: RouteLocationNormalized,
-//     from: RouteLocationNormalized,
-//     next: NavigationGuardNext,
-//     middlewares: NavigationGuardNext[],
-//     index: number
-// ): Promise<any> {
-//   return middlewares[index] ? async () => await middlewares[index](to, from, await pipeline(to, from, next, middlewares, index + 1)) : next;
-// }
 
 const router: Router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -63,20 +46,8 @@ const router: Router = createRouter({
   },
 });
 
-// async function beforeEach(to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext): Promise<NavigationGuardReturn> {
-//   log.log('beforeEach to', to, 'from', from);
-//
-//   const middlewares: NavigationGuardNext[] = to?.meta?.middlewares || [];
-//
-//   return middlewares?.length ? await middlewares[0](to, from, pipeline(to, from, next, middlewares, 1)) : await next();
-// }
-//
-// async function afterEach(to: RouteLocationNormalized, from: RouteLocationNormalized, failure?: NavigationFailure | void): Promise<void> {
-//   log.log('afterEach to', to, 'from', from, 'failure', failure);
-// }
-//
-// router.beforeEach(beforeEach);
-// router.afterEach(afterEach);
+router.beforeEach(setTitle);
+router.beforeEach(checkAuth);
 
 sync(store, router);
 

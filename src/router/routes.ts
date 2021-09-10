@@ -1,5 +1,5 @@
 import { RouteRecordRaw } from 'vue-router';
-import NotFound from '@/components/common/NotFound.vue'
+import NotFound from '@/components/common/NotFound.vue';
 
 export const routes: Array<RouteRecordRaw> = [
   {
@@ -47,10 +47,7 @@ export const routes: Array<RouteRecordRaw> = [
     name: 'notFound',
     component: NotFound,
     meta: {
-      header: {
-        logo: false,
-        homeButtton: true,
-      },
+      layout: 'public',
       restricted: false,
     },
     props: true,

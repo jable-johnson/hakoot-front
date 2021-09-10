@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HomePage from '@/components/pages/home/HomePage.vue'
+import HomePage from '@/components/pages/home/HomePage.vue';
 @Options({
   components: { HomePage },
 })
