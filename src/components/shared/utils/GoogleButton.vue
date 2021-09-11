@@ -1,24 +1,5 @@
 <template>
-  <a
-    class="
-      w-full
-      inline-flex
-      justify-center
-      py-2
-      px-4
-      border border-gray-300
-      rounded-md
-      shadow-sm
-      bg-white
-      text-sm
-      font-medium
-      text-gray-500
-      hover:bg-gray-50
-    "
-    :id="componentId"
-    @click="googleSignIn"
-    title="Sign in with Google"
-  >
+  <a class="btn-social" :id="componentId" @click="googleSignIn" title="Sign in with Google">
     <span class="sr-only">Sign in with Google</span>
     <svg
       class="w-5 h-5"
