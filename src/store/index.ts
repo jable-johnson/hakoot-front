@@ -9,7 +9,9 @@ export const state: State = {
 };
 
 export default createStore<State>({
+  strict: true,
   state,
+  modules: {},
 });
 
 declare module '@vue/runtime-core' {

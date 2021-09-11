@@ -16,8 +16,20 @@ if (process.env.NODE_ENV === 'production') {
     updatefound() {
       console.log('New content is downloading.');
     },
-    updated() {
+    updated(registration) {
       console.log('New content is available; please refresh.');
+      if (window.confirm('A new version is available, update now?')) {
+        const worker = registration.waiting;
+        if (worker) {
+          worker.postMessage({ type: 'SKIP_WAITING' });
+
+          worker.addEventListener('statechange', (e: any) => {
+            if (e?.target?.state === 'activated') {
+              window.location.reload();
+            }
+          });
+        }
+      }
     },
     offline() {
       console.log('No internet connection found. App is running in offline mode.');

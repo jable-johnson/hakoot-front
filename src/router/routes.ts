@@ -29,17 +29,17 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: '/login',
     name: 'Login',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue'),
     meta: {
-      layout: 'public',
+      layout: 'default',
     },
   },
   {
     path: '/register',
     name: 'Register',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    component: () => import(/* webpackChunkName: "about" */ '../views/Register.vue'),
     meta: {
-      layout: 'public',
+      layout: 'default',
     },
   },
   {
@@ -47,7 +47,7 @@ export const routes: Array<RouteRecordRaw> = [
     name: 'notFound',
     component: NotFound,
     meta: {
-      layout: 'public',
+      layout: 'default',
       restricted: false,
     },
     props: true,

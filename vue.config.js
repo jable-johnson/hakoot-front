@@ -7,9 +7,15 @@ let optimization = {};
 plugins.push(new BundleAnalyzerPlugin());
 
 module.exports = {
-  transpileDependencies: ['vuex-module-decorators'],
   configureWebpack: {
     plugins,
     optimization,
+  },
+  pwa: {
+    workboxPluginMode: 'InjectManifest',
+    workboxOptions: {
+      exclude: [/\.map$/, /_redirects/],
+      swSrc: 'src/service-worker.js',
+    },
   },
 };

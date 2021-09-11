@@ -1,6 +1,6 @@
 <template>
   <header class="relative">
-    <div class="bg-gray-900 pt-6">
+    <div class="bg-gray-900 py-6">
       <nav class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6" aria-label="Global">
         <div class="flex items-center flex-1">
           <div class="flex items-center justify-between w-full md:w-auto">
@@ -50,7 +50,7 @@
           </div>
         </div>
         <div class="hidden md:flex md:items-center md:space-x-6">
-          <a href="#" class="text-base font-medium text-white hover:text-gray-300"> Log in </a>
+          <router-link class="text-base font-medium text-white hover:text-gray-300" to="login"> Log in </router-link>
           <a
             href="#"
             class="

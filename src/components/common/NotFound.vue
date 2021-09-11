@@ -4,7 +4,7 @@
       <div class="flex-shrink-0 flex justify-center">
         <a href="/" class="inline-flex">
           <span class="sr-only">Workflow</span>
-          <img class="h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600" alt="" />
+          <img class="h-12 w-auto" src="https://ui.com/img/logos/workflow-mark.svg?color=indigo&shade=600" alt="" />
         </a>
       </div>
       <div class="py-16">

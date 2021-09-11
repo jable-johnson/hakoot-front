@@ -9,6 +9,15 @@ module.exports = {
         teal: colors.teal,
         cyan: colors.cyan,
       },
+      minHeight: {
+        0: '0',
+        '1/4': '25%',
+        '1/2': '50%',
+        '3/4': '75%',
+        'h-full': '100%',
+        'h-80': '80vh',
+        'h-screen': '100vh',
+      },
     },
   },
   variants: {
