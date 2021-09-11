@@ -1,5 +1,8 @@
 {
     "css.customData": [
         ".vscode/css_custom_data.json"
-    ]
+    ],
+    "emmet.includeLanguages": {
+        "postcss": "css"
+    }
 }
