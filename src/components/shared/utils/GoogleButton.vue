@@ -66,9 +66,12 @@ export default class GoogleButton extends Vue {
   googleSignIn() {
     googleAuthService['signIn']()
       .then((result: any) => {
+        console.log(result);
+
         // return this.onSuccess(result);
       })
       .catch((err: Error) => {
+        console.log(err);
         // return this.onFailure(err);
       });
   }
@@ -78,6 +81,8 @@ export default class GoogleButton extends Vue {
       .load(this.params)
       .then(() => {
         if (googleAuthService.isSignedIn()) {
+          console.log(googleAuthService.currentUser());
+
           // this.onCurrentUser(googleAuthService.currentUser());
         }
       })
