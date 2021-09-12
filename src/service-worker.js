@@ -4,7 +4,6 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox
 // self.__WB_MANIFEST is default injection point
 precacheAndRoute(self.__WB_MANIFEST);
 
-workbox.clientsClaim();
 workbox.core.setCacheNameDetails({ prefix: 'hakoot-play' });
 
 self.addEventListener('message', (event) => {
@@ -12,6 +11,8 @@ self.addEventListener('message', (event) => {
     self.skipWaiting();
   }
 });
+
+workbox.core.clientsClaim();
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
