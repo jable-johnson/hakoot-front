@@ -1,11 +1,11 @@
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 let plugins = [];
 let optimization = {};
 
 // comment line 6 to disable analyzer
 // plugins.push(new BundleAnalyzerPlugin({
-//   analyzerPort: 8088
+//   analyzerPort: 8088,
 // }));
 
 module.exports = {
@@ -15,6 +15,7 @@ module.exports = {
     optimization,
   },
   pwa: {
+    name: 'Hakoot Play',
     themeColor: "#42b983",
     msTileColor: "#42b983",
     appleMobileWebAppCache: "yes",
@@ -26,7 +27,6 @@ module.exports = {
         /manifest$/,
         /\.htaccess$/,
         /service-worker\.js$/,
-        /sw\.js$/,
       ],
       swSrc: './src/service-worker.js',
       swDest: 'service-worker.js',

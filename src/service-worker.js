@@ -1,4 +1,10 @@
 import { precacheAndRoute } from 'workbox-precaching';
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+
+// self.__WB_MANIFEST is default injection point
+precacheAndRoute(self.__WB_MANIFEST);
+
+workbox.clientsClaim();
 workbox.core.setCacheNameDetails({ prefix: 'hakoot-play' });
 
 self.addEventListener('message', (event) => {
@@ -14,9 +20,6 @@ self.addEventListener('message', (event) => {
  */
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
-
-// self.__WB_MANIFEST is default injection point
-precacheAndRoute(self.__WB_MANIFEST);
 /**
  * Messaging worker
  */
@@ -51,4 +54,8 @@ self.addEventListener('notificationclick', (event) => {
   if (url) {
     event.waitUntil(clients.openWindow(url));
   }
+});
+
+self.addEventListener('install', () => {
+  self.skipWaiting();
 });

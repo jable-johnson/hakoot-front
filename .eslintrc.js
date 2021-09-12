@@ -34,6 +34,7 @@ module.exports = {
     indent: 0,
     'space-before-function-paren': 0,
     '@typescript-eslint/no-explicit-any': 'off',
+    "@typescript-eslint/no-inferrable-types": 'off',
     '@typescript-eslint/member-delimiter-style': [
       'warn',
       {
