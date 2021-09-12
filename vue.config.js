@@ -29,6 +29,7 @@ module.exports = {
         /sw\.js$/,
       ],
       swSrc: './src/service-worker.js',
+      swDest: 'service-worker.js',
     },
   },
 };
