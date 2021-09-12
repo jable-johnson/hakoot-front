@@ -1,0 +1,17 @@
+{
+    "name": "Hakoot Play Together",
+    "short_name": "Hakoot",
+    "icons": [
+        {
+            "src": "img/icons/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "background_color": "#FFFFFF",
+    "theme_color": "#42b983",
+    "gcm_sender_id": "48653907066"
+}
