@@ -77,9 +77,6 @@ export default class GoogleButton extends Vue {
     googleAuthService
       .load(this.params)
       .then(() => {
-        if (this.renderParams) {
-          (window as any).gapi.signin2.render(this.componentId, this.renderParams);
-        }
         if (googleAuthService.isSignedIn()) {
           // this.onCurrentUser(googleAuthService.currentUser());
         }
