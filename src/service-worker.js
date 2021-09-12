@@ -1,4 +1,5 @@
-workbox.core.setCacheNameDetails({ prefix: 'sango-tasks-manager' });
+import { precacheAndRoute } from 'workbox-precaching';
+workbox.core.setCacheNameDetails({ prefix: 'hakoot-play' });
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
@@ -14,6 +15,8 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
+// self.__WB_MANIFEST is default injection point
+precacheAndRoute(self.__WB_MANIFEST);
 /**
  * Messaging worker
  */

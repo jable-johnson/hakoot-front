@@ -14,8 +14,15 @@ module.exports = {
   pwa: {
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {
-      exclude: [/\.map$/, /_redirects/],
-      swSrc: 'src/service-worker.js',
+      exclude: [
+        /\.map$/,
+        /_redirects/,
+        /manifest$/,
+        /\.htaccess$/,
+        /service-worker\.js$/,
+        /sw\.js$/,
+      ],
+      swSrc: './src/service-worker.js',
     },
   },
 };
